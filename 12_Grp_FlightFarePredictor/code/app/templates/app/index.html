@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'app/css/Style.css' %}">
+
+
+  <title>Flight Fare Predictor</title>
+<style>
+  option.arr {
+  margin-right: 30px;
+  color: white;
+  margin-left: 12px;
+  margin-top: 5px;
+}
+a{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7)
+}
+a:hover{
+  color: white;
+}
+</style>
+
+
+</head>
+<body>
+  <!-- https://w3layouts.com/airline-booking-form-responsive-widget-template/ -->
+<div class="booking-form-w3layouts">
+  <!-- Form starts here -->
+  <form action="{% url 'test' %}" method="post">
+    {% csrf_token %}
+    <h2 class="sub-heading-agileits">Flight Fare Predictor</h2>
+    <div class="main-flex-w3ls-sectns">
+      <div class="field-agileinfo-spc form-w3-agile-text1">
+        <select class="form-control" id="Source" required="required" name = "Source">
+          <option selected disabled>Source</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Chennai">Chennai</option>
+        </select>
+      </div>
+      <div class="field-agileinfo-spc form-w3-agile-text2">
+        <select class="form-control" id="Destination" required="required" name = "Destination">
+          <option selected disabled>Destination</option>
+          <option value="Cochin">Cochin</option>
+          <option value="Delhi">Delhi</option>
+          <!-- <option value="New Delhi">New Delhi</option> -->
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Kolkata">Kolkata</option>
+        </select>
+      </div>
+    </div>
+    <div class="main-flex-w3ls-sectns">
+      <div class="field-agileinfo-spc form-w3-agile-text1">
+        <select class="form-control" id="airline" required="required" name = "airline">
+          <option selected disabled>Preferred Airline</option>
+          <option value="Jet Airways">Jet Airways</option>
+          <option value="IndiGo">IndiGo</option>
+          <option value="Air India">Air India</option>
+          <option value="Multiple carriers">Multiple carriers</option>
+          <option value="SpiceJet">SpiceJet</option>
+          <option value="Vistara">Vistara</option>
+          <option value="Air Asia">Air Asia</option>
+          <option value="GoAir">GoAir</option>
+          <option value="Multiple carriers Premium economy">Multiple carriers Premium economy
+          </option>
+          <option value="Jet Airways Business">Jet Airways Business</option>
+          <option value="Vistara Premium economy">Vistara Premium economy</option>
+          <option value="Trujet">Trujet</option>
+        </select>
+      </div>
+      <div class="field-agileinfo-spc form-w3-agile-text2">
+        <select class="form-control" id= "stops" required = "required" name = "stops">
+          <option selected disabled>Stopage</option>
+          <option value="0">Non-Stop</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+    </div>
+    <div class="dates">
+      <div class="field-agileinfo-spc form-w3-agile-text1" style="display: inline-flex;">
+        <div><option style="color: white;margin-left: 12px;margin-right: 5px;margin-top: 5px;">Departure</option></div>
+        <div><input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required" min="2019-01-01T00:00" max="2022-12-31T23:59" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="" class="hasDatepicker"></div>
+      </div>
+      <div class="field-agileinfo-spc form-w3-agile-text1" style="display: inline-flex;">
+        <div><option class = "arr">Arrival</option></div>
+        <div><input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required" min="2019-01-01T00:00" max="2022-12-31T23:59" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="" class="hasDatepicker"></div>
+      </div>
+      
+    </div>
+
+    <div class="triple-wthree">
+      <div class="field-agileinfo-spc form-w3-agile-text11">
+        <select class="form-control" required = "required" name = "adultcount">
+          <option value = "1" selected disabled>Adult(12+ Yrs)</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="3">6</option>
+          <option value="4">7</option>
+          <option value="5">8</option>
+        </select>
+      </div>
+      <div class="field-agileinfo-spc form-w3-agile-text22">
+        <select class="form-control" name = "childrencount">
+          <option value="0">Children(2-11 Yrs)</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="field-agileinfo-spc form-w3-agile-text33">
+        <select class="form-control" name = "infantcount">
+          <option value="0">Infant(under 2Yrs)</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+    <input type="submit" value="Predict">
+    <input type="reset" value="Clear Form">
+    <div class="clear"></div>
+    <div style="text-align: center;margin-top: 2em;"><span style="color: white; font-size: x-large; font-weight: 600;">{{prediction_text}}</span></div>
+    <div style="text-align: center;"><h5><a href="mailto:abhishekjaiswal124@gmail.com">© 2021 Abhishek Jaiswal</a></h5></div>
+  </form>
+  <!--// Form starts here -->
+</div>
+
+</body>
+</html>
