@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/img/Rozgaar-logo.png">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>प्रोफ़ाइल | RozGAAR</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/profile.css" />
+  </head>
+  <body>
+    <div>
+      <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/">
+          <img src="/img/Rozgaar-logo.png" width="30" height="25"
+        /></a>
+
+        <a class="navbar-brand" id="lol" href="/">Roz<b>GAAR</b></a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          id="navbarCollapse"
+          class="navbar-collapse justify-content-start collapse in"
+          aria-expanded="true"
+        >
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a
+                href="/about-us"
+                class="nav-link"
+                id="node"
+                >हमारे बारे में</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#contact/to/us" class="nav-link" id="node">संपर्क करें</a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/dashboard" class="nav-link" id="node">डैशबोर्ड</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right ml-auto">
+            <li class="nav-item">
+              <a
+                class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"
+                id="lop"
+                href=""
+                aria-expanded="false"
+                style="text-align: center"
+                >प्रोफ़ाइल</a
+              >
+              <a
+                class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"
+                id="lop"
+                href="/auth/logout"
+                aria-expanded="false"
+                style="text-align: center"
+                >लॉग आउट</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="row profile">
+        <div class="col-md-3">
+          <div class="profile-sidebar" style="border-radius: 10px; background-color: rgba(232, 243, 234);">
+            <!-- SIDEBAR USERPIC -->
+            <div class="profile-userpic">
+              <img
+                src=<%= user.thumbnail %>
+                class="img-responsive"
+                alt="https://static.change.org/profile-img/default-user-profile.svg"
+              />
+            </div>
+            <!-- END SIDEBAR USERPIC -->
+            <!-- SIDEBAR USER TITLE -->
+            <div class="profile-usertitle">
+              <div style="text-transform: capitalize" class="profile-usertitle-name"><%= user.username %></div>
+              <div class="profile-usertitle-job"><%= user.type %></div>
+            </div>
+            <!-- END SIDEBAR USER TITLE -->
+            <!-- SIDEBAR BUTTONS -->
+            <div class="profile-userbuttons">
+              <a  
+              href="/users/profile/update"
+              class="btn btn-info btn-sm">
+              अपडेट प्रोफ़ाइल
+              </a>
+              <!--<button type="button" class="btn btn-danger btn-sm">Button 2</button>-->
+            </div>
+            <!-- END SIDEBAR BUTTONS -->
+            <!-- END MENU -->
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="profile-content" style="color: rgba(232, 243, 234);">
+            <h5>नाम</h5>
+            <p style="text-transform: capitalize"><%= user.username %></p>
+            <h5>ईमेल</h5>
+            <p><%= user.email %></p>
+            <h5>पता</h5>
+            <p>
+              <%= user.address %>
+            </p>
+            <h5>प्राथमिक संपर्क नंबर</h5>
+            <p><%= user.contact1 %></p>
+            <% if(user.contact2) { %>
+            <h5>माध्यमिक संपर्क नंबर</h5>
+            <p><%= user.contact2 %></p>
+            <% } %>
+            <% if(user.type=="worker") { %>
+              <h5>पसंदीदा नौकरियां</h5>
+              <p style="text-transform: capitalize">
+                <% user.jobTypes.forEach((job)=>{ %>
+                  <%= job %> &nbsp
+                <% }) %>
+              </p>
+            <% } %>
+            
+            <a
+              class="btn btn-3 get-started-btn mt-1 mb-1"
+              id="lop"
+              href="/users/dashboard"
+              aria-expanded="false"
+              style="text-align: center; "
+
+            >आपका डैशबोर्ड</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="modal-wrapper1" class="modal">
+      <form class="modal-content animate" id="m1">
+        <h3 style="color: #254e58">Terms and Conditions</h3>
+        <h4>Welcome to RozGAAR!</h4>
+        <p>
+          By accessing this app we assume you accept the following terms and conditions.
+Do not continue to use RozGAAR if you do not agree to take all of the terms and conditions stated on this page.
+You may access RozGAAR for your own personal use subjected to restrictions set in the following terms and conditions.
+<br>
+Workers and recruiters must:<br>
+->not provide fake information.<br>
+->Register themselves on our app by providing a valid proof.<br>
+->Provide the absolute information about himself/herself as well as about their work.<br>
+->Update the provided information regularly.<br>
+<br>
+Workers and recruiters should not:<br>
+->Misuse the information from RozGAAR app.<br>
+->Reproduce, duplicate or copy material from RozGAAR.<br>
+<br>
+Content Liability:<br>
+We shall not be hold responsible for any content that appears on the app, as it would be as per provided by the workers and recruiters.<br>
+<br>
+Disclaimer:<br>
+To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our app, and the use of this app. Nothing in this disclaimer would be:<br>
+->responsible for your any personal injury<br>
+->responsible for fraud or fraudulent misrepresentation<br>
+As long as the app and the information and services are provided free of charge, we will not be responsible for any loss or damage of any nature.<br>
+        </p>
+        <span
+          onclick="document.getElementById('modal-wrapper1').style.display='none'"
+          class="close"
+          title="Close PopUp"
+          >&times;</span
+        >
+      </form>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="heading"></div>
+      </div>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <footer class="footer1" id="contact/to/us">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4">
+            <a href="https://github.com/Cre-tive-Crew" style="color: #254e58" target="_blank"
+              ><i class="fa fa-github" aria-hidden="true"></i> Visit us
+            </a>
+          </div>
+          <div class="col-xl-4">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=get.rozgaar@gmail.com&su=SUBJECT&body=BODY"
+              style="color: #254e58"
+              target="_blank"
+              ><i
+                class="fa fa-envelope"
+                aria-hidden="false"
+                style="color: #254e58"
+              ></i>
+              Mail us for any query</a
+            >
+          </div>
+          <div class="col-xl-4">
+            <a
+              href="#terms&conditions"
+              onclick="document.getElementById('modal-wrapper1').style.display='block'"
+              style="color: #254e58"
+              ><i
+                class="fa fa-laptop"
+                aria-hidden="false"
+                style="color: #254e58"
+              ></i>
+              Terms &amp; Conditions</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="footer2">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">Copyright © 2020 Creative_Crew</div>
+        </div>
+      </div>
+    </footer>
+    <script src="homepage.js"></script>
+  </body>
+</html>
