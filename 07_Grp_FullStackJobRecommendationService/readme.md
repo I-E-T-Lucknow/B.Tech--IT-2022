@@ -71,10 +71,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-## License
-[Creative_Crew](https://github.com/Cre-tive-Crew)
 
-## TEAM : CREATIVE_CREW
+## TEAM : Group &
 [Utkarsh Goel](https://github.com/UtkarshGoel18)
 
 [Sandeep Yadav](https://github.com/ucandoit-sky)
