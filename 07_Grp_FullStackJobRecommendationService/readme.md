@@ -1,5 +1,4 @@
 # RozGAAR 
-<img src="/public/img/Rozgaar-logo.png" width=100>
 
 **RozGAAR** is a common platform for daily-wage workers (like painters, gardeners etc) and their recruiters to connect in order to
 increase their employability during global pandemic crises.
