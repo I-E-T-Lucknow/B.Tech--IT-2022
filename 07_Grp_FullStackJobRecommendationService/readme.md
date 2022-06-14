@@ -39,8 +39,6 @@ CSS
 Javascript
 ```
 
-## Production link 
-<a href="http://rozgaar-app.herokuapp.com/" terget="_blank">RozGAAR : कोई काम छोटा नहीं होता।</a>
 
 ## Ream more about RozGAAR
 <a href="https://docs.google.com/presentation/d/1Thj0tcDpVO9BrvOHFJkMq96FlFkiQHUkTsYfRLnST10/edit#slide=id.g12dbf99b2f2_0_199" terget="_blank">Presentation and Demo</a>
