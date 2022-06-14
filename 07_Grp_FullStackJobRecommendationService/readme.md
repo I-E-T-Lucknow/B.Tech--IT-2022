@@ -72,7 +72,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 
-## TEAM : Group &
+## TEAM : Group 7
 [Utkarsh Goel](https://github.com/UtkarshGoel18)
 
 [Sandeep Yadav](https://github.com/ucandoit-sky)
