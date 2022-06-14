@@ -66,8 +66,8 @@ This project will be broken down into three main notebooks:
 
 
 Authors
-RITIK KUMAR GUPTA (B.Tech. IT-2022 - 1805220046) [LinkedIn](https://www.linkedin.com/in/ritik-gupta-92518617b/)
-RITIK KUMAR (B.Tech. IT-2022 - 1805213045) 
-SHUBHAM KUMAR (B.Tech. IT-2022 - 1805213055) 
+- RITIK KUMAR GUPTA (B.Tech. IT-2022 - 1805220046) [LinkedIn](https://www.linkedin.com/in/ritik-gupta-92518617b/)
+- RITIK KUMAR (B.Tech. IT-2022 - 1805213045) 
+- SHUBHAM KUMAR (B.Tech. IT-2022 - 1805213055) 
 
 ---
