@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>HackVoucher</title>
+
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<link rel="apple-touch-icon" href="">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Link to your css file -->
+	<link rel="stylesheet" href="">
+    <style>
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+  
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+   
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: orange; 
+        }
+  
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: darkorange; 
+        }
+        body{
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+
+<body>
+	<!-- Start coding here -->
+
+	<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: white;">
+      <div class="container">
+          <img src="/logo.jpg" style="height: 40px; float: left; width: 40px;">
+         <a class="navbar-brand" href="/home" style="color: darkorange"><strong>HACK Vouchers</strong></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="/home" style="color: darkorange">Home<span class="sr-only">(current)</span></a>
+               </li>
+               <%if(!user.isAdmin) {%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/add-voucher" style="color: darkorange">Add Voucher</a>
+                 </li>
+               <%}%>
+               <li class="nav-item">
+                  <a class="nav-link" href="/sign-out" style="color: darkorange">signOut</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+    <div style="margin-bottom: 5vh; height: 652px; display: inline; position: relative;">
+    <div class="jumbotron" style="width: 40%; float: left; margin-bottom: 0; display: inline-block; height: 680px; background-color: #ffcc80; padding-bottom: 5vh; margin-top: 10vh; padding-top: 5vh; margin-left: 1vw; border-radius: 10px;">
+        <div class="jumbotron" style="height: 40vh; margin-bottom: 0; padding-top: 4vh; padding-bottom: 4vh; border-radius: 15px; background-color: white;">
+            <h4 style="text-align: center; color:#ffcc80; letter-spacing: 3px; margin-bottom: 2.5vh;"><strong>PERSONAL DETAILS</strong></h4>
+            <p style="text-align: center; margin-bottom: 1.2vh; letter-spacing: 1px;">Name - <%= user.name %></p>
+            <p style="text-align: center; margin-bottom: 1.2vh; letter-spacing: 1px;">Email - <%= user.email %></p>
+            <%if(!user.isAdmin) {%>
+                <p style="text-align: center; margin-bottom: 1.2vh; letter-spacing: 1px;">Coupons hosted - <%= user.coupen_hosted %></p>
+                <p style="text-align: center; margin-bottom: 1.2vh; letter-spacing: 1px;">Coupons buyed - <%= user.coupen_buyed %></p>
+            <%} else {%>
+                <p style="text-align: center; margin-bottom: 1.2vh; letter-spacing: 1px;">Verified Coupons - <%= totalVerifiedCoupons %></p>
+            <p style="text-align: center; margin-bottom: 1.2vh; letter-spacing: 1px;">Pending oupons - <%= totalPendingCoupons %></p>
+            <%}%>
+            <%if(!user.isAdmin){%>
+            <h4 style="margin-left: 4vw; color:#ffcc80; letter-spacing: 3px; margin-top: 2vh; margin-bottom: 2.0vh; display: inline-block;"><strong>Coins in account: <%= user.coins %></strong></h4>
+            <img src="/coin.png" style="height: 20px; width: 20px; margin-bottom: 8px;">
+            <button  
+            onclick="window.location.href = '/wallet'" style="color: white; background-color: darkorange ; margin-top: 14%; margin-left: 18%; letter-spacing: 1px; border-radius: 5px; border-color: darkorange;">
+                Add Coins
+            </button>
+            <button  
+            onclick="window.location.href = '/wallet'" style="color: white; background-color: darkorange ;margin-top: -30px;  margin-left: 45%; letter-spacing: 1px; border-radius: 5px; border-color: darkorange;">
+               Redeem Money
+            </button>
+            <%}%>
+        </div>
+    </div>
+    <div class="jumbotron" style="width: 58%; display: inline-block; margin-bottom: 0; min-height: 656px; padding-left: 1vw; padding-right: 1vw;">
+        <!-- <div class="card" style="border-radius: 10px; margin-bottom: 2vh;">
+            <div class="card-body">
+           <h4 class="card-title" style="color: darkorange;">10% off on everything above 1500</h4>
+           <h6 class="card-subtitle mb-2 text-muted">Flipkart</h6>
+           <p class="card-text">Coupon Code - *************</p>
+           <a href="#" class="card-link" style="color: darkorange;">Card link</a>
+           <a href="#" class="card-link" style="color: darkorange;">Flipkart</a>
+            </div>
+        </div> -->
+        
+           <%if(user.isAdmin) {%>
+            <%for(i of coupon) {%>
+                <%if(!i.isVerified) {%>
+                    <div class="card" style="border-radius: 10px; margin-bottom: 2vh;">
+                        <div class="card-body">
+                       <h4 class="card-title" style="color: darkorange;"><%= i.description %></h4>
+                       <a href="https://www.<%= i.store %>.com" style = "text-decoration: none;"><h6 class="card-subtitle mb-2 text-muted"><%= i.store %></h6></a>
+                       <p class="card-text">Coupon Code - <%= i.couponCode %></p>
+                       <a href="/main/<%= i._id %>" class="card-link" style="color: darkorange;">Card link</a>
+                       <a href="/verify/<%= i._id %>" class="card-link" style="color: darkorange;">verify</a>
+                       <!-- <a href="#" class="card-link" style="color: darkorange;"><%= i.store %></a> -->
+                        </div>
+                    </div>
+                <%}%>
+              <%}%>
+           <%} else {%>
+            <%for(i of x) {%>
+                <div class="card" style="border-radius: 10px; margin-bottom: 2vh;">
+                    <div class="card-body">
+                   <h4 class="card-title" style="color: darkorange;"><%= i.description %></h4>
+                   <a href="https://www.<%= i.store %>.com" style = "text-decoration: none;"><h6 class="card-subtitle mb-2 text-muted"><%= i.store %></h6></a>
+                   <p class="card-text">Coupon Code - <%= i.couponCode %></p>
+                   <a href="/main/<%= i._id %>" class="card-link" style="color: darkorange;">Card link</a>
+                   <!-- <a href="#" class="card-link" style="color: darkorange;"><%= i.store %></a> -->
+                    </div>
+                </div>
+              <%}%>
+           <%}%>
+    </div>
+
+	<!-- Coding End -->
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
