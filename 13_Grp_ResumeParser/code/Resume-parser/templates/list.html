@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body id = "listpage">
+    
+    
+    <a  type="button" class="btn btn-primary" style="margin-left: 1em; margin-top: 1em;" href="/">Back To Home</a>
+        <form action='/filter' method='POST' >
+           
+            <div class="form-row">
+                <div class="col-md-1" style="padding-right:0rem; padding-top:2rem;">
+                    <input name='top'  class="form-control"  placeholder="top"  min="0" max="100"  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                </div>
+                <div class="col-md-1" style="padding-right:0rem; padding-top:2rem;">
+                    <input   type="submit" class="btn btn-success" value='search'>
+                </div>
+              </div>
+            </form>
+
+              <div class="form-row">
+                <div class="container" >
+                    <div class="row" style="margin-top:20px">
+                        <form action='/lowhigh' method='POST' >
+                        <div class="col-md-1">
+                            <input name='lower_limit'  class="form-control"  placeholder="low" min="0" max="100"  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                        </div>
+                        <div class="col-md-1">
+                            <input name='upper_limit' class="form-control" placeholder="high"   min="0" max="100"  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                        </div>
+                        <div class="col-md-3">
+                            <input   type="submit" class="btn btn-success" value='search'>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+              </div>
+
+    {% if notvalid %}
+    <div style="text-align: center;">
+        <div class="alert alert-danger" style="width: 500px; margin-left: 33%;">
+            <strong>please provide low value less than or equal to high value</strong> 
+        </div>
+      </div>
+    {% else %}
+        <!-- </div> -->
+    <div style="width: 50%; margin: auto">
+        {% for comment in comments %}
+        <div style="padding: 10px; background-color: rgb(250, 242, 242); margin: 20px">
+            <p style="font-size: 18px"> {{ comment.email }}</p>
+            <p style="font-size: 18px"> {{ comment.phone_number}}</p>
+            <p style="font-size: 24px"> {{ comment.resume_score}}%</p>
+            <a href="delete/{{comment._id}}" class="btn btn-danger a-btn-slide-text">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                 <span><strong>delete</strong></span>            
+             </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+</body>
+</html>
