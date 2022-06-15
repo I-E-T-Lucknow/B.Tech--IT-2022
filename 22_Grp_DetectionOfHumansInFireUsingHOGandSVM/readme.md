@@ -5,7 +5,7 @@
 </div>
 <div  left-margin="2px"  align="justify">
 The project helps detect the humans who are stuck in fire and are usually not visible to the eyes due to high smoke and flame. The project can be broken down into two merging segments - the first is detecting the Fire, and the second is detecting the human. The fire detection algorithm detects the Fire and flames in the environment if present; the module works based on colour format YCbCr. It uses a Histogram of Oriented Gradient(HOG) and Support Vector Machine(SVM) to detect a human in the Fire. It evaluates several motion-based feature sets for human detection in the form of videos.<br><br>
-	Our final year project, done under the guidance of <strong>Dr Upendra Kumar</strong> and <strong>Ms. Mudita Sharan</strong>
+	Our final year project is done under the guidance of <strong>Dr Upendra Kumar</strong> and <strong>Ms. Mudita Sharan</strong>
 </div>
 
   
