@@ -10,6 +10,7 @@ The project helps detect the humans who are stuck in fire and are usually not vi
 
   
   
+<hr>
 
 # Parts
 
@@ -40,7 +41,7 @@ The project helps detect the humans who are stuck in fire and are usually not vi
 	5.2 If not detected, go for background subtraction
 
   
-  
+<hr>  
 
   
 
@@ -62,6 +63,7 @@ The project helps detect the humans who are stuck in fire and are usually not vi
 
   
   
+<hr>
 
 ## Steps to run the project on Colab
 
@@ -85,6 +87,14 @@ The project helps detect the humans who are stuck in fire and are usually not vi
 7. To test it on Video Provide the absolute Video path.<br>
 	``` input_video_file_path = "/content/drive/MyDrive/Data/3.webm" ```
   
+<hr>
+
+# Tools 
+
+**Language:**  ```Python```<br><br>
+**Libraries:** ```OpenCv, Matplotlib , joblib, sklearn, os , numpy, glob ```
+
+<hr>
 
 # Results
 
@@ -94,7 +104,7 @@ The project helps detect the humans who are stuck in fire and are usually not vi
 <img  alt="Fire Not Detected!"  src="https://drive.google.com/uc?id=1nEL6dA9qveYzmNf5NUPN6AILA2bCspQQ"  height="300px"  width="50%">
 <pre>            Fire NOT detected                                                    Fire detected </pre>
 <img  src="https://drive.google.com/uc?id=1R1HEACk0qtEF9dLhxdGAhMOyS4a4yXnE"  height="70%">
-<pre>                                           Confusion Matrix                 </pre>
+<pre>                                             Confusion Matrix                 </pre>
 <hr>
 
 
