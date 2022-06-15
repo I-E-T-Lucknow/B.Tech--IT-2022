@@ -1,8 +1,8 @@
-#Movie Recommendation System
+# Movie Recommendation System
 
 This is the code for building a recommendation system based on content based filtering and collaborative filtering using K nearest neighbour model.
 
-###Overview
+### Overview
 
 There are basically 3 types of recommendation algorithms
 
@@ -15,25 +15,25 @@ The rating data is represented using a matrix where users are along the rows and
 There are different methods to fill the blank cells like nearest neighbour model, latent factor analysis, etc.by using values which are already filled in rating matrix.
 However, we will use Neareset neighbour model which measures similarity of users using distance metrics.
 
-###Dependencies
+### Dependencies
 
-*scipy
-*pandas
-*numpy
+* scipy
+* pandas
+* numpy
 
-###Usage
+### Usage
 
-*Clone my repository.
-*Open CMD in working directory.
-*Run following command.
-*pip install -r requirements.txt
-*App.py is the main Python file of Streamlit Web-Application.
-*To run app, write following command in CMD. or use any IDE.
-*streamlit run App.py
-*Movie-recommendation.ipynb is the notebook of data processing.
+* Clone my repository.
+* Open CMD in working directory.
+* Run following command.
+* pip install -r requirements.txt
+* App.py is the main Python file of Streamlit Web-Application.
+* To run app, write following command in CMD. or use any IDE.
+* streamlit run App.py
+* Movie-recommendation.ipynb is the notebook of data processing.
 
-###Authors
+### Authors
 
-####1.Apoorv Bansal,IT,2022 Batch, apoorv95.ab@gmail.com, 7042248410
-####2.Uttam Singh,IT, 2022 Batch, ut6097@gmail.com, 9718774802
-####3.Vanshika Gupta, IT, 2022 Batch, vanshikagupta554@gmail.com, 8707741291
+#### 1. Apoorv Bansal,IT,2022 Batch, apoorv95.ab@gmail.com, 7042248410
+#### 2. Uttam Singh,IT, 2022 Batch, ut6097@gmail.com, 9718774802
+#### 3. Vanshika Gupta, IT, 2022 Batch, vanshikagupta554@gmail.com, 8707741291
