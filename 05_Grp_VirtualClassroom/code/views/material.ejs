@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Shuvanshu Gupta">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Study Material</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="/css/font-face.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/css/theme.css" rel="stylesheet" media="all">
+    <style>
+        
+        html, body{min-height:100%;}
+        body{height:100vh;}
+        body,.page-wrapper{
+            background-color: #E8E8E8;
+        }
+        .modal-login {		
+            color: #636363;
+            width: 400px;
+            margin: 80px auto 0;
+        }
+        .modal-login .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+        .modal-login .modal-header {
+            border-bottom: none;   
+            position: relative;
+            justify-content: center;
+        }
+        .modal-login h4 {
+            text-align: center;
+            font-size: 26px;
+            margin: 30px 0 -15px;
+        }
+        .modal-login .form-control:focus {
+            border-color: #70c5c0;
+        }
+        .modal-login .form-control, .modal-login .btn {
+            min-height: 40px;
+            border-radius: 3px; 
+        }
+        .modal-login .close {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }	
+        .modal-login .modal-footer {
+            background: #ecf0f1;
+            border-color: #dee4e7;
+            text-align: center;
+            justify-content: center;
+            margin: 0 -20px -20px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+        .modal-login .modal-footer a {
+            color: #999;
+        }		
+        .modal-login .avatar {
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -70px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            z-index: 9;
+            background: #60c7c1;
+            padding: 15px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+        .modal-login .avatar img {
+            width: 100%;
+        }
+        .modal-login .btn {
+            color: #fff;
+            border-radius: 4px;
+            background: #60c7c1;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            border: none;
+        }
+        .modal-login .btn:hover, .modal-login .btn:focus {
+            background: #45aba6;
+            outline: none;
+        }
+        .trigger-btn {
+            display: inline-block;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="/images/icon/logo.png" alt="ClassAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="index.html">
+                                <i class="far fa-check-square"></i>Back to dashboard</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="button.html">Button</a>
+                                </li>
+                                <li>
+                                    <a href="badge.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="tab.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="card.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="alert.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="progress-bar.html">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="switch.html">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="typo.html">Typography</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="/dashboard">
+                    <img src="/images/icon/logo.png" alt="Class admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li style="background-color: #101010; padding-left: 20px; border-radius: 30px; margin-bottom: 10px;">
+                            <a href="/dashboard" style="color: white;">
+                                <i class="fas fa-chevron-left"></i>Back to dashboard</a>
+                        </li>
+
+                        <% subjectarray.forEach((one)=>{ %>
+                            <li class="has-sub">
+                                <a class="js-arrow" href="#">
+                                    <%= one.name %>
+                                </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+
+                                    <% one.chapters.forEach((onechapter)=>{ %>
+                                        <li class="has-sub">
+                                            <a class="js-arrow" href="#">Unit<%= onechapter.index %></a>
+                                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+
+                                                <% onechapter.resources.forEach((onetopic)=>{ %>
+                                                    <li>
+                                                        <a href="/resources/<%=onetopic.file%>">
+                                                            <%= onetopic.name %>
+                                                        </a>
+                                                    </li>
+                                                <% }) %>
+
+                                            </ul>
+                                        </li>
+                                    <% }) %>
+                                    
+                                </ul>
+                            </li>
+                        <% }) %>
+                        
+                        <% if(user.category == 'faculty') { %>
+                        <li class="addassignment" style="background-color: white; padding-left: 20px; border-radius: 30px; margin-bottom: 10px;">
+                            <a href="#myModal" data-toggle="modal" style="color: black;">
+                                <i class="fas fa-plus"></i>Add Resource
+                            </a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    
+                                    
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-notifications"></i>
+                                        <span class="quantity"><%= notificationarray.length %></span>
+                                        <div class="notifi-dropdown js-dropdown">
+                                            <div class="notifi__title">
+                                                <p>You have <%= notificationarray.length %> Notifications</p>
+                                            </div>
+
+                                            <% notificationarray.forEach((one)=>{ %>
+                                                <div class="notifi__item">
+                                                    <div class="bg-c1 img-cir img-40">
+                                                        <i class="zmdi zmdi-email-open"></i>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p><%= one.content %></p>
+                                                        <span class="date">April 12, 2018 06:50</span>
+                                                    </div>
+                                                </div>
+                                            <% }) %>
+
+                                            <div class="notifi__footer">
+                                                <a href="#">All notifications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="/uploads/<%= user.image %>" alt="<%= user.name %>" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#"><%= user.name %></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="/uploads/<%= user.image %>" alt="<%= user.name %>" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#"><%= user.name %></a>
+                                                    </h5>
+                                                    <span class="email"><%= user.email %></span>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                </div>
+                                            </div> -->
+                                            <div class="account-dropdown__footer">
+                                                <a href="/user/logout">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+
+            
+            <!-- END MAIN CONTENT-->
+            
+            <!-- END PAGE CONTAINER-->
+        </div>
+        
+      </div>
+        
+        <strong><h3 id="noneselected" style="color: white; margin-top: 20%; text-align: center; background-color: #E8E8E8; z-index: -1; margin-left: 17.6%;">Select a file to show here.</h3></strong>
+
+      <!-- Jquery JS-->
+      <script src="/vendor/jquery-3.2.1.min.js"></script>
+      <!-- Bootstrap JS-->
+      <script src="/vendor/bootstrap-4.1/popper.min.js"></script>
+      <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+      <!-- Vendor JS       -->
+      <script src="/vendor/slick/slick.min.js">
+      </script>
+      <script src="/vendor/wow/wow.min.js"></script>
+      <script src="/vendor/animsition/animsition.min.js"></script>
+      <script src="/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+      </script>
+      <script src="/vendor/counter-up/jquery.waypoints.min.js"></script>
+      <script src="/vendor/counter-up/jquery.counterup.min.js">
+      </script>
+      <script src="/vendor/circle-progress/circle-progress.min.js"></script>
+      <script src="/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+      <script src="/vendor/chartjs/Chart.bundle.min.js"></script>
+      <script src="/vendor/select2/select2.min.js">
+      </script>
+  
+      <!-- Main JS-->
+      <script src="/js/main.js"></script>
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">			
+                    <h4 class="modal-title">Add Study Material</h4>	
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="/resources/addnew" method="POST" name="newform" enctype="multipart/form-data">
+                        <div class="form-group">
+                           <select class="form-control"  name="subject" id="subject" required="required" placeholder="Select Subject">
+                            <% subjectarray.forEach((one)=>{ %>
+                                <option value="<%= one._id %>"><%= one.name %></option>
+                            <% }) %>
+                           </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="chapter" id="chapter" placeholder="Relevant unit" required="required">		
+                        </div> 
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="title" id="title" placeholder="Enter topic"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" class="form-control" name="file" id="file" placeholder="Attach file here">		
+                        </div> 
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <a href="placement.html">Go to Forms section Instead</a>
+                </div> -->
+            </div>
+        </div>
+    </div>   
+  </body>
+  
+  </html>
+  <!-- end document-->
