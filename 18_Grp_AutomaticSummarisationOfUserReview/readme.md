@@ -12,7 +12,7 @@ In this report, we describe an approach to automatically summarize customer revi
 listed on amazon.com . It often results in high accuracy in extracting phrases from noisy customer reviews.
 
 Our final year project, done under the guidance of Dr. Parul Yadav and Dr. Aditi Sharma is based on the Text summarization. 
-We have  combined the features of TextBlob (subjectivity) and Vader(compound)  for Sentiment analysis, Glove model for word embeddings and a TextRank Algorithm to decide the most important sentences in the text and.
+We have  combined the features of TextBlob (subjectivity) and Vader(compound)  for Sentiment analysis, Glove model for word embeddings and a TextRank Algorithm to decide the most important sentences in the text.
 
 This project summarizes the text along with with identifying the sentiments of user. It separates those sentiments into sets of 
 negative and positive and then ranks the sentences accordingly. 
