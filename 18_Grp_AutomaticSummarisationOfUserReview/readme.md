@@ -22,7 +22,7 @@ negative and positive and then ranks the sentences accordingly.
 
 Make sure you have brew installed on your system. If not, follow the steps [here](https://brew.sh) to do so.
 
-- Install Python 3.6.x on your system.
+- Install Python 3.6.x or higher on your system.
 
     ```
       brew install python@3
