@@ -11,10 +11,8 @@ Large number of customer reviews posted on sites like amazon.com make it difficu
 In this report, we describe an approach to automatically summarize customer reviews and present the prelimanary results of our research on product reviews
 listed on amazon.com . It often results in high accuracy in extracting phrases from noisy customer reviews.
 
-Our final year project, done under the guidance of Dr. Parul Yadav and 
-Dr. Aditi Sharma is based on the Text summarization. 
-We have  combined the features of TextBlob (subjectivity) and Vader(compound)  for Sentiment analysis.
-And a TextRank Algorithm to decide the most important sentences in the text.
+Our final year project, done under the guidance of Dr. Parul Yadav and Dr. Aditi Sharma is based on the Text summarization. 
+We have  combined the features of TextBlob (subjectivity) and Vader(compound)  for Sentiment analysis, Glove model for word embeddings and a TextRank Algorithm to decide the most important sentences in the text and.
 
 This project summarizes the text along with with identifying the sentiments of user. It separates those sentiments into sets of 
 negative and positive and then ranks the sentences accordingly. 
@@ -64,7 +62,15 @@ Make sure you have brew installed on your system. If not, follow the steps [here
        Install Networkx : pip install networkx 
        
     ```
-
+ - Downloading dataset files
+    
+    [Dataset - Amazon_Unlocked_Mobile.csv ](https://www.kaggle.com/datasets/PromptCloudHQ/amazon-reviews-unlocked-mobile-phones/download)
+ 
+    [Glove Model - glove.6B.100d.txt](https://www.kaggle.com/datasets/danielwillgeorge/glove6b100dtxt/download)
+ 
+    Store these files with  MajorProject_FinalCode.py
+    
+    
 Now, the project is ready to run.
 
 ## Run Locally
@@ -87,6 +93,8 @@ The project is running now.
 ## Algorithm used
 
 **TextRank:**  To Rank Sentences according to its importance in text, based on Google Page Rank Algorithm.
+
+**Glove Model** To Create Word Embeddings. We've used Stanford's GloVe 100d word embeddings for our model
 
 
 ## Authors
