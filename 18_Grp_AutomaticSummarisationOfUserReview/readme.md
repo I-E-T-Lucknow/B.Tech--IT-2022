@@ -94,7 +94,7 @@ The project is running now.
 
 **TextRank:**  To Rank Sentences according to its importance in text, based on Google Page Rank Algorithm.
 
-**Glove Model** To Create Word Embeddings. We've used Stanford's GloVe 100d word embeddings for our model
+**Glove Model:** To Create Word Embeddings. We've used Stanford's GloVe 100d word embeddings for our project.
 
 
 ## Authors
