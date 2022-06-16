@@ -9,7 +9,7 @@ The collection and transmission of massive volumes of data have parachuted into 
 As internet allows users to interact more, customer reviews posted on the web have experienced significant growth in the recent years.
 Large number of customer reviews posted on sites like amazon.com make it difficult for marketers and buisness analyst to understand customer concerns.
 In this report, we describe an approach to automatically summarize customer reviews and present the prelimanary results of our research on product reviews
-listed on amazon.com . It often results in high accuracy in extracting phrases
+listed on amazon.com . It often results in high accuracy in extracting phrases from noisy customer reviews.
 
 Our final year project, done under the guidance of Dr. Parul Yadav and 
 Dr. Aditi Sharma is based on the Text summarization. 
