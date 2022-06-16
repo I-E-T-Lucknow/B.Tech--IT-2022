@@ -99,7 +99,7 @@ The project is running now.
 
 ## Authors
 
-- Shubham Singh (B.Tech. IT-2022 - 1705213045) [[LinkedIn](linkedin.com/in/shubhamsingh-15a175160), [GitHub](github.com/shubhaml1)]
+- Shubham Singh (B.Tech. IT-2022 - 1705213045) [[LinkedIn](https://www.linkedin.com/in/shubham-singh-15a175160/), [GitHub](https://www.github.com/shubhaml1)]
 - Durgesh (B.Tech. IT-2022 - 1705213026) [[LinkedIn](https://www.linkedin.com/in/durgesh-kushwah-b57b50151/)]
-- Harsh Kumar (B.Tech. IT-2022 - 1900520139001) [[Email](1900520139001@ietlucknow.ac.in)]
+- Harsh Kumar (B.Tech. IT-2022 - 1900520139001) [<a href="mailto:1900520139001@ietlucknow.ac.in">Email</a>]
 
