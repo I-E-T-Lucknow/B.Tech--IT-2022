@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Crime Prediction Using Machine Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crime Prediction Using Machine Learning</title>
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+</head>
+
+<body style="background-image: linear-gradient(75deg, #24C6DC, #514A9D); height: 100vw;">
+  <div style="margin-left:10%;margin-top: 50px;">
+    <div class="card" style="width: 40%; margin-left: 350px;">
+      <h3 style="margin: 32px; text-align: center;">Crime Prediction using Machine Learning</h3>
+    <div class="ml-container" style="margin-left: 100px; ">
+
+      <form action="Prediction" method="POST">
+        {% csrf_token %}
+        <br/>
+        
+        <div class="input-group mb-3" style="width: 80%;">
+          <span class="input-group-text" id="inputGroup-sizing-default">Latitude</span>
+          <input type="text" class="form-control" id="lat" name="lat" placeholder="75.26548"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3" style="width: 80%;">
+          <span class="input-group-text" id="inputGroup-sizing-default">Longitude</span>
+          <input type="text" class="form-control" id="long" name="long" placeholder="75.26548"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3" style="width: 80%;">
+          <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
+          <input type="text" class="form-control" id="day" name="day" placeholder="05"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3" style="width: 80%;">
+          <span class="input-group-text" id="inputGroup-sizing-default">Month</span>
+          <input type="text" class="form-control" id="month" name="month" placeholder="07"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3" style="width: 80%;">
+          <span class="input-group-text" id="inputGroup-sizing-default">Year</span>
+          <input type="text" class="form-control" id="year" name="year" placeholder="2018"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3" style="width: 80%;">
+          <span class="input-group-text" id="inputGroup-sizing-default">Hour</span>
+          <input type="text" class="form-control" id="hour" name="hour" placeholder="12"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3" style="width: 80%;">
+          <span class="input-group-text" id="inputGroup-sizing-default">Minute</span>
+          <input type="text" class="form-control" id="min" name="min" placeholder="53"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3" style="width: 80%;">
+          <span class="input-group-text" id="inputGroup-sizing-default">Seconds</span>
+          <input type="text" class="form-control" id="sec" name="sec" placeholder="00"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <button type="submit" style="margin: 30px; margin-left: 80px; " class="btn btn-primary" value="Prediction">Predict</button><button type="reset" style="margin-left: 24px;" class="btn btn-warning" value="Prediction">Reset</button> <br/><br/>
+      </form>
+    </div>
+  </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Shuvanshu Gupta">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Login</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="/css/font-face.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    
+    <!-- popup css -->
+    <!-- <link rel="stylesheet" href="popupS.css"> -->
+
+    <!--Font CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+    
+    <!-- Vendor CSS-->
+    <link href="/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/css/theme.css" rel="stylesheet" media="all">
+    <style>
+        .page-wrapper {
+            background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("/images/bgoption1.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-position: center center;
+/*            background-color: bisque;*/
+        }
+        h1,h2 {
+          font-weight: 200;
+          margin: 0.4em 0;
+        }
+        h1 {
+            color: #888;
+            font-size: 3.5em; 
+        }
+        h2 {
+          color: #888;
+          font-size: 2em;
+        }
+        .modal-login {		
+          color: #636363;
+          width: 350px;
+          margin: 80px auto 0;
+        }
+        .modal-login .modal-content {
+          padding: 20px;
+          border-radius: 5px;
+          border: none;
+        }
+        .modal-login .modal-header {
+          border-bottom: none;   
+              position: relative;
+              justify-content: center;
+        }
+        .modal-login h4 {
+          text-align: center;
+          font-size: 26px;
+          margin: 30px 0 -15px;
+        }
+        .modal-login .form-control:focus {
+          border-color: #70c5c0;
+        }
+        .modal-login .form-control, .modal-login .btn {
+          min-height: 40px;
+          border-radius: 3px; 
+        }
+        .modal-login .close {
+              position: absolute;
+          top: -5px;
+          right: -5px;
+        }	
+        .modal-login .modal-footer {
+          background: #ecf0f1;
+          border-color: #dee4e7;
+          text-align: center;
+              justify-content: center;
+          margin: 0 -20px -20px;
+          border-radius: 5px;
+          font-size: 13px;
+        }
+        .modal-login .modal-footer a {
+          color: #999;
+        }		
+        .modal-login .avatar {
+          position: absolute;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          top: -70px;
+          width: 95px;
+          height: 95px;
+          border-radius: 50%;
+          z-index: 9;
+          background: #60c7c1;
+          padding: 15px;
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+        .modal-login .avatar img {
+          width: 100%;
+        }
+          .modal-login .btn {
+              color: #fff;
+              border-radius: 4px;
+          background: #60c7c1;
+          text-decoration: none;
+          transition: all 0.4s;
+              line-height: normal;
+              border: none;
+          }
+        .modal-login .btn:hover, .modal-login .btn:focus {
+          background: #45aba6;
+          outline: none;
+        }
+        .trigger-btn {
+          display: inline-block;
+          margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body class="animsition">
+    <div class="main-page">
+    <div class="page-wrapper" style="height:100vh; width: 100vw; padding: 0;">
+        <div style="width: 60%; padding: 3%; float: left; padding-right: 6%;">
+            <img src="/images/icon/logo2.png" height="50" width="200">
+            <h1>Is it about
+              <span
+                 class="txt-rotate"
+                 data-period="4000"
+                 data-rotate='[ "assignments", "classes", "resources", "time table", "forms","placements" ]'></span>?
+            </h1>
+            <h2>A single website is all you need.</h2>
+            <hr>
+            <h4 style="font-family: sans-serif; color: #888; font-weight: 20; font-size: 1.5em; line-height: 1.5em;">Hate navigating through Google Classroom for notes, assignments, Or just missed a class because of lazy class representative, or you just hate the way you can download files from Google Classroom, We have got you all covered.</h4>
+            <hr>
+            <h4 style="font-family: sans-serif; color: #888; font-weight: 20; font-size: 1.5em; line-height: 1.5em;">Salient Features:
+            <ul style="margin-left: 3%;">
+                <li>Interactive dashboard</li>
+                <li>Dynamic Time Table Allocation</li>
+                <li>Assigments</li>
+                <li>Study Resources</li>
+                <li>Essential Forms</li>
+                <li>Placement Cell Info</li>
+                <li>and many more features...</li>
+            </ul>
+            </h4>
+            <hr>
+            <p>Copyright © 2022 Team Gryffindor. All rights reserved.</p>
+        </div>
+        <div class="login-content" style="border-radius: 10px;  width: 32%; float: right; margin-top: 8.25%; margin-bottom: 8.25%; margin-right: 8%;">
+            <div class="login-logo">
+                <a href="#">
+                    <img src="/images/icon/logo.png" alt="ClassAdmin">
+                </a>
+            </div>
+            <div class="login-form">
+                <form action="/user/signin" method="post">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                    </div>
+
+                    <% message.forEach((one)=> { %>
+                      <div class="sufee-alert alert with-close alert-warning alert-dismissible fade show">
+                        <span class="badge badge-pill badge-warning">Warning</span>
+                          <%= one %>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    <% }); %>
+
+                    <div class="login-checkbox">
+                        <label>
+                            <input type="checkbox" name="remember">Remember Me
+                        </label>
+                        <label>
+                            <a data-toggle="modal" href="#myModal1">Forgot Password?</a>
+                        </label>
+                    </div>
+                    <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
+                    <div class="social-login-content">
+                        <p style="text-align: center;">Or sign in with</p>
+                        <img src="https://img.icons8.com/color/48/000000/google-logo.png" style="margin-left: 40%; margin-right: 2%;" />
+                        <img src="https://img.icons8.com/cute-clipart/50/000000/facebook-new.png"/>
+                    </div>
+                </form>
+                <div class="register-link">
+                    <p>
+                        Don't you have account?
+                        <a href="/user/signup">Sign Up Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <!-- Jquery JS-->
+    <script src="/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="/vendor/slick/slick.min.js">
+    </script>
+    <script src="/vendor/wow/wow.min.js"></script>
+    <script src="/vendor/animsition/animsition.min.js"></script>
+    <script src="/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="/vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="/vendor/select2/select2.min.js">
+    </script>
+    <!-- popup js -->
+    <!-- <script src="popupS.js"></script> -->
+
+    <!-- Main JS-->
+    <script src="/js/main.js"></script>
+    <script>
+        var TxtRotate = function(el, toRotate, period) {
+          this.toRotate = toRotate;
+          this.el = el;
+          this.loopNum = 0;
+          this.period = parseInt(period, 10) || 200;
+          this.txt = '';
+          this.tick();
+          this.isDeleting = false;
+        };
+
+        TxtRotate.prototype.tick = function() {
+          var i = this.loopNum % this.toRotate.length;
+          var fullTxt = this.toRotate[i];
+
+          if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
+
+          this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+          var that = this;
+          var delta = 300 - Math.random() * 100;
+
+          if (this.isDeleting) { delta /= 2; }
+
+          if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+          }
+
+          setTimeout(function() {
+            that.tick();
+          }, delta);
+        };
+
+        window.onload = function() {
+          var elements = document.getElementsByClassName('txt-rotate');
+          for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-rotate');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            }
+          }
+          // INJECT CSS
+          var css = document.createElement("style");
+          css.type = "text/css";
+          css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+          document.body.appendChild(css);
+        };
+    </script>
+    <div id="myModal1" class="modal fade">
+      <div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <div class="modal-header">			
+            <h4 class="modal-title">Forget Password</h4>	
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form action="/user/forget-password" method="post" name="forgetpassword">
+                        <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Enter email" required="required">		
+              </div> 
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+    <!--
+          <div class="modal-footer">
+            <a href="#">Forgot Password?</a>
+          </div>
+    -->
+        </div>
+      </div>
+    </div>  
+</body>
+
+</html>
+<!-- end document-->

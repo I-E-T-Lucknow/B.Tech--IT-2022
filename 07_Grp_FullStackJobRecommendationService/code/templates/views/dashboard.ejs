@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/img/Rozgaar-logo.png">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>डैशबोर्ड | RozGAAR</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <div>
+      <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/">
+          <img src="/img/Rozgaar-logo.png" width="30" height="25"
+        /></a>
+
+        <a class="navbar-brand" id="lol" href="/">Roz<b>GAAR</b></a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          id="navbarCollapse"
+          class="navbar-collapse justify-content-start collapse in"
+          aria-expanded="true"
+        >
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a
+                href="/about-us"
+                class="nav-link"
+                id="node"
+                >हमारे बारे में</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#contact/to/us" class="nav-link" id="node">संपर्क करें</a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/dashboard" class="nav-link" id="node">डैशबोर्ड</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right ml-auto">
+            <li class="nav-item">
+              <a
+                class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"
+                id="lop"
+                href="/users/profile"
+                aria-expanded="false"
+                style="text-align: center"
+                >प्रोफ़ाइल</a
+              >
+              <a
+                class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"
+                id="lop"
+                href="/users/refer"
+                aria-expanded="false"
+                style="text-align: center"
+                >Refer</a
+              >
+              <a
+                class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"
+                id="lop"
+                href="/auth/logout"
+                aria-expanded="false"
+                style="text-align: center"
+                >लॉग आउट</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+<!-- 
+<div class="container ra">
+  <div class="boxx">
+    <div class="element effect7">
+      <div class="front7">
+        <h2 style="font-weight: bold">WORKER</h2>
+      </div>
+  
+      <div class="back7">
+        <div class="back-content">
+          <h2>Hover Effect 7</h2>
+          <p>This is a wonderful project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div> -->
+<%function getFirstWord(str) {%>
+  <%let spaceIndex = str.indexOf(' ');%>
+  <%return spaceIndex === -1 ? str : str.substr(0, spaceIndex);%>
+<%};%>
+<div>
+  <% if(user.type=="worker") {%>
+    <h1  class="my-heading"> उपलब्ध नौकरी पोस्टिंग </h1>
+    <%}else {%>
+      <h1  class="my-heading"> हमारे कार्यकर्ता प्रोफाइल </h1>
+    <%}%>
+   
+</div>
+<form id="filter" action="/users/dashboard/filter" method="POST"></form>
+<div class="grid-container">
+  <div class="box1">
+    <div class="imge"> <img src=<%=user.thumbnail%> class="image"> </div>
+    <div class="user-name" style="text-transform: capitalize;"><%= getFirstWord(user.username) %></div>
+    
+    <% if(user.type=='recruiter') {%>
+    <div id="container">
+      
+      <button onclick="window.location.href='/users/jobs'" class="learn-more" >
+        <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">मेरी नौकरियां पोस्टिंग</span>
+      </button>
+      
+    </div>
+    <%}%>
+    <section >
+      
+      <% if(user.type=='worker') {%>
+      <div style="font-size: 25px; text-align: center; margin: 2px 8px; color: #254e58; font-weight: 800;"> फ़िल्टर नौकरियां</div>
+      <%} else {%>
+      <div style="font-size: 25px; text-align: center; margin: 2px 8px; color: #254e58; font-weight: 800;"> फ़िल्टर कार्यकर्ता</div>
+      <%}%>
+      
+      
+      <input form="filter" id='one' type='checkbox' name="Gardener" />
+      <label for='one'>
+        <span></span>
+        GARDNERS
+        <ins><i>GARDNERS</i></ins>
+      </label>
+      
+      <input id='two' form="filter" type='checkbox' name="Watchman" />
+      <label for='two'>
+        <span></span>
+        WATCHMEN
+        <ins><i>WATCHMEN</i></ins>
+      </label>
+      
+      <input id='three' form="filter" type='checkbox' name="Painter" />
+      <label for='three'>
+        <span></span>
+        PAINTERS
+        <ins><i>PAINTERS</i></ins>
+      </label>
+      
+      <input id='four' form="filter" type='checkbox' name="Maid" />
+      <label for='four'>
+        <span></span>
+         MAIDS
+        <ins><i>MAIDS</i></ins>
+      </label>
+     </section>
+     <div id="container">
+      <button type='submit' form="filter" class="learn-more">
+        <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">फ़िल्टर</span>
+      </button>
+     </div>
+    
+  </div>
+
+  
+  <div class="ra">
+  
+    <!-- <% if(user.type=="worker") {%>
+      <div class="row" style="margin-top: 25px; margin-bottom: 0px;"> <h2> Take a look at the job postings. </h2></div>
+    <%}else {%>
+      <div class="row" style="margin-top: 25px; margin-bottom: 0px;"> <h2> Take a look at the worker profiles.</h2></div>
+    <%}%> -->
+    
+  <div class="row r">
+    <% if(user.type=="worker") {%>
+     <% jobs.forEach( (job)=>{%>
+
+      <div class="boxx">
+      <div class="element effect7">
+        <div class="front7">
+          
+
+          <img src= <%= `/img/${job.jobType}.jpg` %> style="filter: blur(3px); width: 100%; height: 100%;">
+          <div class="container contt" style="text-shadow: 0px 0px 5px rgb(0, 0, 0);">
+            <div class="job-title-name-worker">
+            <%= job.jobType %>
+            </div>
+            <div class="job-Address"><p><%= job.jd %></p></div>
+            <div class="job-Address"><h4>पता:</h4><p><%= job.ownerAddress %></p></div>
+          </div>
+        </div>
+    
+        <div class="back7">
+          <div class="back-content">
+            <div><h4 style="color: white;">नाम : </h4><p style="font-size: 15px;  text-transform: capitalize;">
+              <%= job.ownerName %></p></div>
+            <div><h4 style="color: white;">संपर्क : </h4><p style="font-size: 15px;"> <%= job.contact %></p></div>
+            
+            <div><h4 style="color: white;">ईमेल पता : </h4><p style="font-size: 15px;"> <%= job.email %></p></div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <%}) %>  
+    <%}else {%>
+    <% users.forEach( (worker)=>{%>
+      
+      <div class="boxx">
+        <div class="element effect7">
+          <div class="front7">
+            <img src=<%= worker.thumbnail %>  style="filter: blur(3px); width: 100%; height: 100%;">
+            <div class="container contt" style="text-shadow: 0px 0px 5px rgb(0, 0, 0); text-transform: capitalize;">
+              <div class="job-title-name-worker">
+                <%= worker.username %>
+              </div>
+              
+              <div class="job-Address"><h4>पता:</h4><p>
+                <%= worker.address %> <br> 
+                कार्य :
+               <% worker.jobTypes.forEach((jobType)=> { %>
+                  <%=jobType%>
+                <% })%>
+              
+              </p></div>
+              
+            </div>
+          </div>
+      
+          <div class="back7">
+            <div class="back-content">
+              <div><h4 style="color: white;">नाम : </h4><p style="font-size: 15px; text-transform: capitalize;">
+               <%= worker.username %>
+              </p></div>
+              <div><h4 style="color: white;">संपर्क : </h4><p style="font-size: 15px;">
+                <%= worker.contact1 %>
+              </p></div>
+              
+              <% if(worker.contact2) {%>
+                <div><h4 style="color: white;"> माध्यमिक संपर्क  : </h4><p style="font-size: 15px;">
+                  <%= worker.contact2 %>
+                </p></div>  
+              <%}%>
+
+
+              <div><h4 style="color: white;">ईमेल पता : </h4><p style="font-size: 15px;">
+                <%= worker.email %>
+              </p></div>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    <%}) %>       
+    <%}%>
+
+  </div>
+
+  </div>
+  
+<!-- </div> -->
+    <!-- -->
+</div>
+
+
+
+
+
+
+
+
+
+
+    <div id="modal-wrapper1" class="modal">
+      <form class="modal-content animate" id="m1">
+        <h3 style="color: #254e58">Terms and Conditions</h3>
+        <h4>Welcome to RozGAAR!</h4>
+        <p>
+          By accessing this app we assume you accept the following terms and conditions.
+Do not continue to use RozGAAR if you do not agree to take all of the terms and conditions stated on this page.
+You may access RozGAAR for your own personal use subjected to restrictions set in the following terms and conditions.
+<br>
+Workers and recruiters must:<br>
+->not provide fake information.<br>
+->Register themselves on our app by providing a valid proof.<br>
+->Provide the absolute information about himself/herself as well as about their work.<br>
+->Update the provided information regularly.<br>
+<br>
+Workers and recruiters should not:<br>
+->Misuse the information from RozGAAR app.<br>
+->Reproduce, duplicate or copy material from RozGAAR.<br>
+<br>
+Content Liability:<br>
+We shall not be hold responsible for any content that appears on the app, as it would be as per provided by the workers and recruiters.<br>
+<br>
+Disclaimer:<br>
+To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our app, and the use of this app. Nothing in this disclaimer would be:<br>
+->responsible for your any personal injury<br>
+->responsible for fraud or fraudulent misrepresentation<br>
+As long as the app and the information and services are provided free of charge, we will not be responsible for any loss or damage of any nature.<br>
+        </p>
+        <span
+          onclick="document.getElementById('modal-wrapper1').style.display='none'"
+          class="close"
+          title="Close PopUp"
+          >&times;</span
+        >
+      </form>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <footer class="footer1" id="contact/to/us">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4">
+            <a href="https://github.com/Cre-tive-Crew" style="color: #254e58" target="_blank"
+              ><i class="fa fa-github" aria-hidden="true"></i> Visit us
+            </a>
+          </div>
+          <div class="col-xl-4">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=get.rozgaar@gmail.com&su=SUBJECT&body=BODY"
+              style="color: #254e58"
+              target="_blank"
+              ><i
+                class="fa fa-envelope"
+                aria-hidden="false"
+                style="color: #254e58"
+              ></i>
+              Mail us for any query</a
+            >
+          </div>
+          <div class="col-xl-4">
+            <a
+              href="#terms&conditions"
+              onclick="document.getElementById('modal-wrapper1').style.display='block'"
+              style="color: #254e58"
+              ><i
+                class="fa fa-laptop"
+                aria-hidden="false"
+                style="color: #254e58"
+              ></i>
+              Terms &amp; Conditions</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="footer2">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">Copyright © 2022</div>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>
