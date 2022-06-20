@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ROZGAAR</title>
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/css/signup-style.css">
+</head>
+<body>
+<div>
+    <nav class="navbar  navbar-default  navbar-expand-lg navbar-light">
+        
+            <a class="navbar-brand" href="#">
+            <img src="/img/Rozgaar-logo.png"  width="30" height="25"></a>
+            <a class="navbar-brand" id="lol" href="#">Roz<b>GAAR</b></a> 
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+        <div id="navbarCollapse" class="navbar-collapse justify-content-start collapse in" aria-expanded="true">
+
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="/" class="nav-link" id="node"><b>Home</b></a></li>
+                <li class="nav-item"><a href="#about" onclick="document.getElementById('modal-wrapper').style.display='block'" class="nav-link" id="node"><b>हमारे बारे में</b></a></li>
+                
+                <!-- <li class="nav-item"><a href="#about" onclick="toggle()" class="nav-link" id="node"><b>हमारे बारे में</b></a></li> -->
+                <li class="nav-item"><a href="#contact/to/us" class="nav-link" id="node"><b>संपर्क करें</b></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="modal-wrapper" class="modal">
+    <form class="modal-content animate" >
+        <h3 style="color: red;"> Who Are We</h3><br>
+
+       <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+    
+    </form>
+</div>
+
+
+
+<br><br><br><br>
+<div class="container" id="c1">
+    <ul class="form-wrapper" >					
+        <li type="none" >
+            <form action="/submit-referral" method="post" >
+                <p class="hint-text" style="text-align: center;">Referral Form</p>
+           
+                <!-- <div class="form-group social-btn clearfix">
+                    <a href="/auth/google" class="btn btn-primary" id="b1" style="background-color: white; border: 1px solid red; width: 100%;"><i class="fa fa-google" style="color: red;"></i><span style="color: red;padding: 8px;">Google</span></a>
+                </div>
+                <div class="or-seperator"><b>or</b></div> -->
+                <!-- <p class="hint-text" style="text-align: center;">Fill in this form to create your account!</p> -->
+                <div class="form-group">
+                    <input type="text" name = "name"  class="form-control" placeholder="Name" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="text" name = "phoneNumber" class="form-control" placeholder="Phone Number" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="text" name = "Address" class="form-control" placeholder="Address" required="required">
+                </div>
+                <div class="form-group">
+                    <label class="jobslabel"
+                      >अपनी पसंदीदा नौकरी चुनें</label
+                    >
+                    <div class="checkbox">
+                      <input type="checkbox" id="checkbox" name="Painter" value="" />
+                      <label for="checkbox"><span>Painter</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                      <input
+                        type="checkbox"
+                        id="checkbox2"
+                        name="Watchman"
+                        value=""
+                      />
+                      <label for="checkbox2"><span>Watchman</span></label>
+                    </div>
+                    <div class="checkbox">
+                      <input
+                        type="checkbox"
+                        id="checkbox3"
+                        name="Gardener"
+                        value=""
+                      />
+                      <label for="checkbox3"><span>Gardener</span></label>
+                    </div>
+
+                    <div class="checkbox">
+                      <input
+                        type="checkbox"
+                        id="checkbox4"
+                        name="Maid"
+                        value=""
+                      />
+                      <label for="checkbox4"><span>Maid</span></label>
+                    </div>
+                  </div>
+                <input type="submit" class="btn btn-primary btn-block" id="lll" value="Submit Referral" style="text-align: center; width: 100%;">
+                </div>
+                <!-- <div class="form-group">
+                    <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#terms&conditions" onclick="document.getElementById('modal-wrapper1').style.display='block'">Terms &amp; Conditions</a></label>
+                    <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#terms&conditions" onclick="document.getElementById('modal-wrapper1').style.display='block'">Terms &amp; Conditions</a></label>
+
+                </div> -->
+               <br>
+                <!-- <p class="hint-text" style="text-align: center;">Already registered ? <a style="text-decoration: none;" href="login">Sign in </a>here.</p> -->
+            
+            </form>
+        </li>
+    </ul>
+</div>
+
+<div id="modal-wrapper1" class="modal">
+    <form class="modal-content animate" id="m1">
+        <h3 style="color: red;"> Terms and Conditions:</h3>
+        <h4> Welcome to Rozgaar!</h4>
+        <span onclick="document.getElementById('modal-wrapper1').style.display='none'" class="close" title="Close PopUp">&times;</span>
+    </form>
+</div>
+
+<br><br><br><br><!-- <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button> -->
+<footer class="footer1" id="contact/to/us">
+    <div class="container">
+        <div class="row">
+           <div class="col-xl-4">
+            <a href="https://github.com/avasthiayush" style="color: white;"><i class="fa fa-github" aria-hidden="true"></i> Visit us </a>
+           </div>
+           <div class="col-xl-4">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=xyz@gmail.com&su=SUBJECT&body=BODY" style="color: white;"><i class="fa fa-envelope" aria-hidden="false" style="color: white;"></i> Mail us for any query</a>
+           </div>
+           <div class="col-xl-4">
+            <a href="#terms&conditions" onclick="document.getElementById('modal-wrapper1').style.display='block'" style="color: white;">Terms &amp; Conditions</a>
+           </div>
+           
+        </div>
+    </div>
+</footer>
+<footer class="footer2">
+    <div class="container">
+        <div class="row">
+            <div class=" col-xl-12">
+                Copyright © 2020 Creative_Crew
+             </div>
+        </div>
+    </div>
+ </footer>
+
+ <script>
+     function toggle(){
+         var blur = document.getElementById('blur');
+         blur.classList.toggle('active')
+     }
+ </script>
+ <script src="homepage.js"></script>
+</body>
+</html>

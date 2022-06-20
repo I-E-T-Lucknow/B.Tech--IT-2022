@@ -3,48 +3,99 @@
 ## Traffic sign recognition using CNN
 
 
-**Table of Content**
-
-1. [Introduction](#1-introduction)
-2. [Members](#2-members)
-3. [Roadmap](#3-roadmap)
-4. [Estimation](#4-estimation)
-5. [Demonstration](#5-demonstration) 
-
-## 1. Introduction
-
-* Traffic sign detection and classification is an important technology, as it helps drivers in
-understanding signs and following traffic rules, as well as contributing to the development of
-autonomous driving systems.
-* This project is based on the state of the art object detection network, convolutional neural network.
-* This projet is capable enought to detect 43 traffic signal generally used at roadside.
-
-## 2. Members
-* [Vivek Pandey](https://github.com/vivek0455) --*Responsible for implemention, Bugs fixing and GUI*
-* [Tehreem Arshad]( ) -- *Generally work on architecture of CNN Model*
-* [Shristi Kashyap]( ) --*Documentation, bugs fixes and GUI*
-
-## 3. Roadmap
-
-*  The whole system can be modeled as the figure below. It consists of four stages, namely image input, pre-processing , detection, classification and result.
  
-![image](https://github.com/vivek0455/B.Tech--IT-2022/blob/main/02_Grp_TrafficSignRecognition/report/image_2022-06-13_09-59-45.png)
+
+## Introduction
+
+Traffic sign detection and classification is an important technology, as it helps drivers in
+understanding signs and following traffic rules, as well as contributing to the development of
+autonomous driving systems. There are so many road accidents also due to mis-interpreted traffic signal by
+human due to fatigue, bad weather or any other human limitations. To dodge this, we have tried to
+implement an open source software which recognises traffic signals. 
+
+Our final year project, done under the guidance of Prof. Vineet Kansal and 
+Dr. Aditi Sharma is based on the Traffic sign Recognition. 
+We have created an application which uses CNN for detecting and classifying traffic signal using OpenCV.
+
+This project acts as an sign detector which opens up the camera of the system installed 
+and detects and recognises traffic signal. As soon as a recognised 
+sign is seen in the application, it automatically displays the recognition in the camera,
+meanwhile classifying the sign to a particular class.
+ 
+ 
+## Installation
+
+Make sure you have brew installed on your system.
+
+- Install Pip or Upgrade it
+  
+   ```
+   pip install --upgrade pip wheel
+   ```
+   
+- Install Python 2.7 on your system.
+
+    ```
+      pip install python@2
+    ```
+
+- Update your path variables accordingly
+
+    ```
+      export PATH="/usr/local/sbt/python@2/libexec/bin:$PATH"
+    ```
+
+- Install Conda on your system. This is essential for our libraries to work later.
+
+- Install Visual Studio Code by following the steps given in Conda.
+
+- Clone the project (or copy the folder to your local)
+
+    ``` 
+      git clone https://www.github.com/link-to-project.git
+    ```
+
+- Go to the project directory
+
+    ```
+      cd my-project
+    ```
+
+- Install dependencies
+
+    ```
+      pip install opencv, tkinter, SkLearn
+    ```
+
+Now, the project is ready to run.
+
+## Run Locally
+
+After following the above steps for installation, type the command below to run the project.
+
+  ```bash
+    python deployment_on_webcam+image.py
+  ```
+  
+The project is running now.
 
 
+## Tech Stack
 
-## 4. Estimation
+**Language:** Python
 
-The collected data, divided it into three datasets, including training, validating, and testing. The face recognition accuracy and loss is schematically drawn in figure.
-![image](https://github.com/vivek0455/B.Tech--IT-2022/blob/main/02_Grp_TrafficSignRecognition/report/image_2022-06-13_15-35-47.png)
+**Libraries:** OpenCV, Tkinter, NumPy, Pandas, SkLearn, Matplotlip
 
+## Machine Learning Models Used
 
-## 5. Demonstration
-
-![image](https://github.com/vivek0455/B.Tech--IT-2022/blob/main/02_Grp_TrafficSignRecognition/report/image_2022-06-13_15-37-28.png)
-
-![image](https://github.com/vivek0455/B.Tech--IT-2022/blob/main/02_Grp_TrafficSignRecognition/report/image_2022-06-13_15-39-05.png)
+**Traffic Sign Recognition :**  CNN
 
 
+## Authors
+
+- Vivek Pandey(B.Tech. IT-2022 - 1900520139006)
+- Tehreem Arshad (B.Tech. IT-2022 - 1900520139005)
+- Srishti Kashyap(B.Tech. IT-2022 - 1900520139004)
 
 
 

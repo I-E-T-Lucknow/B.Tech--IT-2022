@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>HackVoucher</title>
+
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<link rel="apple-touch-icon" href="">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Link to your css file -->
+	<link rel="stylesheet" href="">
+    <style>
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+  
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+   
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: orange; 
+        }
+  
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: darkorange; 
+        }
+    </style>
+</head>
+
+<body>
+	<!-- Start coding here -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" style="background-color: white;">
+      <div class="container">
+          <img src="/logo.jpg" style="height: 40px; float: left; width: 40px;">
+         <a class="navbar-brand" href="/home" style="color: darkorange"><strong>HACK Vouchers</strong></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="/home" style="color: darkorange">Home<span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="/add-voucher" style="color: darkorange">Add Voucher</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="/sign-out" style="color: darkorange">signOut</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+    <div class="jumbotron" style="width: 50%; height: 656px; margin-bottom: 0; display: inline-block; float: left; background-color: darkorange; opacity: 0.7; color: white;">
+        <h2 style="text-align: right; margin-top: 35%;"><strong><%=COUPON.description%></strong></h2>
+        <br>
+        <% if(COUPON.isPurchaged) {%>
+            <h4 style="text-align: right;">Coupon Code:<%= COUPON.couponCode %><strong></strong></h4>
+        <%}else {%>
+            <h4 style="text-align: right;">Coupon Code: ***********<strong></strong></h4>
+            <%}%>
+        <br>
+        <a href="https://<%= link %>"><button type="button" class="btn btn-primary" style="float: right; background-color: white; color: darkorange; outline:none; border: none; padding: 15px 20px; letter-spacing: 3px; text-transform: uppercase;"><strong><%=COUPON.store%></strong></button></a>
+    </div>
+    <div class="jumbotron" style="width: 50%; height: 656px; margin-bottom: 0; display: inline-block; color: darkorange; opacity: 0.7;">
+        <h2 style="text-align: left; margin-top: 39%; display: inline-block;"><strong>Price: <%=COUPON.cardLimit%></strong></h2>
+        <img src="/coin.png" style="height: 24px; width: 24px; margin-bottom: 14px;">
+        <br>
+        <br>
+        <a href="/buy-coupon/<%= COUPON._id %>"><button type="button" class="btn btn-primary" style="background-color: darkorange; color: white; outline:none; border: none; padding: 15px 20px; letter-spacing: 0.2em;"><strong>BUY  COUPON</strong></button></a>
+    </div>
+	<!-- Coding End -->
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

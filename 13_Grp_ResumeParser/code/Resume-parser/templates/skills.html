@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body id = "listpage">
+    <a  type="button" class="btn btn-primary" style="margin-left: 1em; margin-top: 1em;" href="/">Back To Home</a>
+    <form method="POST" action="/skills/add">
+        <input type="text" style="float:right; margin-right: 4em;" name="skill">
+        <br>
+        <input  class="btn btn-primary" style="margin-top: 2em;float: right;" type="submit" value="Add Skills">
+    </form>
+    
+    <div style="width: 50%; margin: auto">
+        {% for skill in skills %}
+        <div style="padding: 10px; background-color: rgb(250, 242, 242); margin: 20px">
+            <p style="font-size: 24px"> {{skill.name}}</p>
+            <a href="/skills/delete/{{skill._id}}" class="btn btn-danger a-btn-slide-text">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                 <span><strong>delete</strong></span>            
+             </a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

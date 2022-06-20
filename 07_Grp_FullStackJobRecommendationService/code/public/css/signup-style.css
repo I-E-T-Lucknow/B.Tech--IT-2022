@@ -1,0 +1,296 @@
+body{
+    font-family: 'Varela Round', sans-serif;
+    background-image: url(/img/login-signup-bg-img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: grey; 
+  }
+.form-control {
+    box-shadow: none;		
+    font-weight: normal;
+    font-size: 13px;
+}
+.form-control:focus {
+    border-color: #33cabb;
+    box-shadow: 0 0 18px rgba(34, 139, 238, 0.3);
+}
+
+.navbar {
+    background: #fff;
+    padding-left: 16px;
+    padding-right: 30px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #dfe3e8;
+    border-radius: 0;
+ }
+ .navbar .navbar-brand, .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+    padding-left: 10px;
+    font-size: 20px;
+    padding-right: 5px;
+}
+#lol{
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+#node{
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.navbar .navbar-brand b {
+    font-weight: bold;
+    color: red;		
+}
+
+
+#c1{
+    border: 1px solid rgb(44, 160, 168);
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 30%;
+    height: 50%;
+    border-radius: 30px;
+    box-shadow: 5px 5px 20px rgba(10, 188, 194, 0.7);
+
+}
+.b1:hover{
+    box-shadow: 2px 5px 5px rgba(231, 49, 49, 0.3);
+}
+.form-wrapper{
+    padding-right: 30px;
+}
+#lll       
+{       color: #fff;
+		background: red;
+		padding-top: 8px;
+        padding-bottom: 7px;
+		vertical-align: middle;
+        border: none;
+        border-radius: 30px;
+}
+#lll:hover{
+    background-color: #33cabb;
+}
+.or-seperator {
+    margin-top: 32px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+.or-seperator b {
+    color: #666;
+    padding: 0 8px;
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 26px;
+    background: #fff;
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    position: relative;
+    top: -15px;
+    z-index: 1;
+}
+.check {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .check:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .check input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .check input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .check .checkmark:after {
+      top: 5px;
+      left: 5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+
+.footer1 {
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(20, 20, 20);
+	color: white;
+	text-align: center; 
+	margin-left: 0;
+	border-bottom: 1px solid black;
+  }
+  .footer2 {
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: black;
+	color: white;
+	text-align: center; 
+	margin-left: 0;
+  } 
+ .modal {
+	display:none;
+	position: fixed;
+	background-color: white;
+	left: 25%;
+	top: 19%;
+	width: 50%;
+	height: 50%;
+	overflow: auto;
+	border-radius: 30px;
+	box-shadow: 10px 10px 20px rgba(71, 194, 231, 0.9);
+	}
+	
+	
+    a:hover{
+        box-shadow: 4px 5px 5px rgba(231, 49, 49, 0.3);
+    }
+
+	.modal-content {
+	background-color: white;
+	border: 0px solid black;
+	width: 100%;
+	height: 100%;
+	/* top: 20px;
+	left 50px; */
+	overflow: none;
+	text-align: center;
+	padding: 50px 80px 50px 60px;
+	
+    }
+    #modal-wrapper1 {
+        display:none;
+        position: fixed;
+        background-color: white;
+        left: 15%;
+        top: 19%;
+        width: 70%;
+        height: 60%;
+        overflow: none;
+        border-radius: 30px;
+        box-shadow: 10px 10px 20px rgba(71, 194, 231, 0.9);
+        }
+    #m1 {
+        background-color: white;
+        border: 0px solid black;
+        width: 100%;
+        height: 100%;
+        top: 20px;
+        justify-content: left;
+        overflow: none;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+        
+        }
+	
+	.close {
+	position: absolute;
+	right: 25px;
+	top: 10px;
+	color: #000;
+	font-size: 35px;
+	font-weight: bold;
+	}
+	.close:hover,.close:focus {
+	color: red;
+	cursor: pointer;
+	}
+    
+    .animate {
+	animation: zoom 0.6s
+    }
+    
+	@keyframes zoom {
+	from {transform: scale(0)}
+	to {transform: scale(1)}
+	}
+    @media (max-width: 1000px){
+        #c1{
+            width: 50%;
+            
+        } 
+    }
+    @media (max-width: 550px){
+        #c1{
+            width: 80%;
+            
+        } 
+    }
+    @media (max-width: 1000px){
+        #sb1{
+           margin: 5px 10px 0px 0px;
+           padding-bottom: 8px;
+           padding-top: 8px;
+        }
+    }

@@ -1,0 +1,361 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>HackVoucher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<link rel="apple-touch-icon" href="">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Link to your css file -->
+	<link rel="stylesheet" href="">
+    <style>
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+  
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+   
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: orange; 
+        }
+  
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: darkorange; 
+        }
+    </style>
+</head>
+
+<body>
+	<!-- Start coding here -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" style="background-color: white;">
+      <div class="container">
+          <img src="/logo.jpg" style="height: 40px; float: left; width: 40px;">
+         <a class="navbar-brand" href="/home" style="color: darkorange"><strong>HACK Vouchers</strong></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="/home" style="color: darkorange">Home<span class="sr-only">(current)</span></a>
+               </li>
+               <% if(isAuthenticated === false) {%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register" style="color: darkorange">Register</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/sign-in" style="color: darkorange">Login</a>
+                 </li>
+            <%}else {%>
+                <%if(!user.isAdmin) {%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/add-voucher" style="color: darkorange">Add Voucher</a>
+                     </li>
+                   <%}%>
+                <%if(user.isAdmin) {%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile" style="color: darkorange">pending coupons</a>
+                     </li>
+                <%} else {%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile" style="color: darkorange">profile</a>
+                     </li>
+                <%}%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sign-out" style="color: darkorange">signOut</a>
+                 </li>
+                 <%}%>
+
+            </ul>
+         </div>
+      </div>
+   </nav>
+    <div class="jumbotron jumbotron-fluid" style="margin-bottom: 0;">
+		<div class="container">
+			<%if(isAuthenticated) {%>
+                <%if(user.isAdmin) {%>
+                    <h1 class="display-3" style="color: darkorange; text-align: center; margin-top: 35px;">Hey, <%= user.name.charAt(0).toUpperCase() + user.name.slice(1) %></h1>
+                <%} else {%>
+                    <h1 class="display-3" style="color: darkorange; text-align: center; margin-top: 35px;">Hello, folks!</h1>
+                <%}%>
+            <%} else {%>
+                <h1 class="display-3" style="color: darkorange; text-align: center; margin-top: 35px;">Hello, folks!</h1>
+            <%}%>
+			<p class="lead" style="text-align:justify;">It is an online market place with the largest user posted inventory of un- used gift vouchers/ cards. It connects the Buyers and Sellers, allows them to negotiate and arrive at a workable price which works for both the buyer and seller. Hence it will be the cheapest for the buyer and mostly a definite sale for the Seller. 
+                In this project we are making voucher hosting platform in which we get the some vouchers from different e-commerce website like google pay, amazon pay, bhim upi etc which are when we redeem, some come out blank and some of no use of us .If we have got the coupon, which is our waste coupon/that is of no use . So basically, In this Project which we are building, voucher hosting platform we can sell blank vouchers there. and can purchase useful vouchers like discount coupons, cashback coupons etc 
+                .This is the key of the project for the purpose, we also get some bank discounts, coupons from shopping websites like myntra, flipkart, amazon. Some trading account coupons that are no use of us, but can be useful to others. Our Platform will identify blank vouchers, or non-usable to us and we can use them for our profit to earn money.</p>
+			<hr class="my-4">
+			<p style="text-align: center;"></p>
+			<p class="lead" style="margin-left: 39%;">
+				<a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: darkorange; border: none;">Know about Developers</a>
+			</p>
+		</div>
+	</div>
+    <div class="jumbotron" style="padding-top: 4%; padding-bottom: 1.3%; background-color: white; margin-bottom: 0; border-radius: 0; margin-top: 0; padding-left: 8%;">
+        <div class="jumbotron" style="padding: 0; background-color: white;">
+            <%if(!isAuthenticated || !user.isAdmin) {%>
+                <ul style="list-style-type: none;">
+                    <li style="display: inline-block; width: 30%;">
+                        <div class="card" style="border: none;">
+                            <div class="card-body">
+                                <h2 class="card-title" style="text-align: center; color: darkorange;">Registered Users</h2>
+                                <h3 class="card-title" style="text-align: center; "> <%= userSize %> </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; width: 30%;">
+                        <div class="card" style="border: none;">
+                            <div class="card-body">
+                                <h2 class="card-title" style="text-align: center; color: darkorange;">Available Coupons</h2>
+                                <h3 class="card-title" style="text-align: center; "> <%=  couponCount %></h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; width: 30%;">
+                        <div class="card" style="border: none;">
+                            <div class="card-body">
+                                <h2 class="card-title" style="text-align: center; color: darkorange;">Total Exchange</h2>
+                                <h3 class="card-title" style="text-align: center; "> <%= coupoExchange %></h3>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            <%} else {%>
+                <ul style="list-style-type: none;">
+                    <li style="display: inline-block; width: 30%;">
+                        <div class="card" style="border: none;">
+                            <div class="card-body">
+                                <h2 class="card-title" style="text-align: center; color: darkorange;">Verified Coupons</h2>
+                                <h3 class="card-title" style="text-align: center; "> <%= totalVerifiedCoupons %> </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; width: 30%;">
+                        <div class="card" style="border: none;">
+                            <div class="card-body">
+                                <h2 class="card-title" style="text-align: center; color: darkorange;">Pending Coupons</h2>
+                                <h3 class="card-title" style="text-align: center; "> <%=  totalPendingCoupons %></h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; width: 30%;">
+                        <div class="card" style="border: none;">
+                            <div class="card-body">
+                                <h2 class="card-title" style="text-align: center; color: darkorange;">Total Admins</h2>
+                                <h3 class="card-title" style="text-align: center; "> 3</h3>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            <%}%>
+        </div>
+    </div>
+	<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel" data-slide-to="1"></li>
+			<li data-target="#carousel" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="/img_mountains_wide.jpg" alt="First slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="/img_nature_wide.jpg" alt="Second slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="/img_snow_wide.jpg" alt="Third slide">
+			</div>
+		</div>
+	</div>
+    
+    <form action = "/search" method="post">
+        <div class="jumbotron" style="margin-bottom: 0; padding-top: 3%; padding-bottom: 0%; background-color: white;">
+            <ul style="list-style-type: none; margin-left: 10%; margin-right: 10%; padding-left: 0;">
+            <li style="display: inline-block; margin-left: 0; margin-bottom: 0; width: 85%;">
+            <div class="form-group">
+            <input  type="text" class="form-control" name="search" id="searchId" placeholder="search........." required>
+                <datalist id="companies">
+                    <option>watch</option>
+                    <option>Tshirt</option>
+                    <option>Specs</option>
+            </datalist>
+            </div>
+            </li>
+            <li style="display: inline-block; width: 14;">
+            <button type="submit" class="btn btn-info" style="background-color: darkorange; display: inline-block; margin-bottom: 5px;">Submit</button>
+            </li>
+            </ul>
+        </div>
+    </form>
+    <div style="width:15%;  margin-left: 1.5%; margin-top: 1%; word-wrap:break-word; display: inline-block;">
+        <form action="/filter" method="post">
+            <div class="avlblstores" style="margin-bottom: 3%;">
+                <h5 style="color: darkorange;">Available Stores</h5>
+                <div class="form-check">
+                    <input name="companyName" class="form-check-input" type="checkbox" value="Reliance" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">Reliance</label>
+                </div>
+                <div class="form-check">
+                    <input name="companyName"  class="form-check-input" type="checkbox" value="flipkart" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">Flipkart</label>    
+                </div>
+                <div class="form-check">
+                    <input name="companyName" class="form-check-input" type="checkbox" value="amazon" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">Amazon</label>
+                </div>
+                <div class="form-check">
+                    <input name="companyName" class="form-check-input" type="checkbox" value="ShopClues" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">ShopClues</label>
+                </div>
+                <div class="form-check">
+                    <input name="companyName" class="form-check-input" type="checkbox" value="Snapdeal" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">Snapdeal</label>
+                </div>
+                <div class="form-check">
+                    <input name="companyName" class="form-check-input" type="checkbox" value="Citykart" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">Citykart</label>
+                </div>
+            </div>
+            <!-- <div class="prcntgdis" style="margin-bottom: 3%;">
+                <h5 style="color: darkorange;">Choose %ge off</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">0-10 %</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">10-20 %</label>  
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">20-30 %</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">30-40 %</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">40-50 %</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">50 % and above</label>
+                </div>
+            </div>  -->
+            <button type="submit" class="btn btn-secondary" style="width: 100px; text-align: center; background-color: darkorange; height: 30px;">Filter</button>
+        </form>
+    </div>
+    <div style="width: 83%; float: right">
+    <ul style="list-style-type: none; padding-left: 20px; margin-bottom: 50px;">
+     <!-- <li style="display: inline-block; width:30%"><div class="card" style="width:100%; word-wrap: break-word; margin: 4%;">
+       <div class="card-body">
+           <h4 class="card-title">Card title</h4>
+           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+           <p class="card-text">Some quick example text to build on the card title and content.</p>
+           <a href="{% url 'main' %}" class="card-link">Card link</a>
+           <a href="#" class="card-link">Another link</a>
+       </div>
+   </div></li> -->
+          
+            <%if(!isSearched) {%>
+                <% if(!filtred) {%>
+                    <% for(let i of COUPON) {%>
+                        <%if(i.isVerified) {%>
+                            <li style="display: inline-block; width:30%"><div class="card" style="width:100%; word-wrap: break-word; margin: 4%;">
+                                <div class="card-body" style="background-color: rgb(238, 135, 71); border-radius: 5px;">
+                                    <h4 class="card-title" style="color: white;"><%= i.title %></h4>
+                                    <h6 class="card-subtitle mb-2 text-muted"><%= i.store %></h6>
+                                    <p class="card-text"><%=i.description%></p>
+                                    <a href="/main/<%=i._id%>" class="card-link" style="color: rgb(219, 213, 213);" >Card link</a>
+                                    <a href="#" class="card-link" style="color: rgb(219, 213, 213);">Another link</a>
+                                </div>
+                            </div></li>
+                        <%}%>
+                  <%}%>
+                <%} else {%>
+                     <%  for(let i of COUPON) {%>
+                        <%   for(let j of filteredCompany) { %>
+                            <%   if(i.store.toLowerCase() == j.toLowerCase()) { %>
+                                <%if(i.isVerified) {%>
+                                    <li style="display: inline-block; width:30%"><div class="card" style="width:100%; word-wrap: break-word; margin: 4%;">
+                                        <div class="card-body" style="background-color: rgb(238, 135, 71); border-radius: 5px;">
+                                            <h4 class="card-title" style="color: white;"><%= i.title %></h4>
+                                            <h6 class="card-subtitle mb-2 text-muted"><%= i.store %></h6>
+                                            <p class="card-text"><%=i.description%></p>
+                                            <a href="/main/<%=i._id%>" class="card-link" style="color: rgb(219, 213, 213);" >Card link</a>
+                                            <a href="#" class="card-link" style="color: rgb(219, 213, 213);">Another link</a>
+                                        </div>
+                                    </div></li>
+                                <%}%>
+                               <%}%>
+                          <% } %>
+                      <% } %>
+                <%}%>
+            <%} else {%>
+                <%for(let i of matchedCoupon) {%>
+                    <li style="display: inline-block; width:30%"><div class="card" style="width:100%; word-wrap: break-word; margin: 4%;">
+                        <div class="card-body" style="background-color: rgb(238, 135, 71); border-radius: 5px;">
+                            <h4 class="card-title" style="color: white;"><%= i.title %></h4>
+                            <h6 class="card-subtitle mb-2 text-muted"><%= i.store %></h6>
+                            <p class="card-text"><%=i.description%></p>
+                            <a href="/main/<%=i._id%>" class="card-link" style="color: rgb(219, 213, 213);" >Card link</a>
+                            <a href="#" class="card-link" style="color: rgb(219, 213, 213);">Another link</a>
+                        </div>
+                    </div></li>
+                <%}%>
+            <%}%>
+
+
+    </ul>
+    </div>
+    
+    <!-- <div class="jumbotron" style="margin-top:60px; margin-bottom: 0; background-color:dimgrey; border-radius: 0; padding-bottom: 0.1%; padding-top: 1% ;">
+        <p style="text-align: center; color: white; ">Copyright2021@<strong> Team Bihu-Bihu</strong></p>
+    </div> -->
+	<!-- Coding End -->
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        <% if(flash.success && flash.success.length > 0) {%>
+            new Noty({
+            theme : 'relax',
+            text: '<%= flash.success %>',
+            type : 'success',
+            layout : 'topRight',
+            timeout : 1500
+         }).show();
+        <%} %>
+        <% if(flash.error && flash.error.length > 0) {%>
+            new Noty({
+            theme : 'relax',
+            text: '<%= flash.error %>',
+            type : 'error',
+            layout : 'topRight',
+            timeout : 1500
+         }).show();
+        <%} %>
+    </script>
+    <script src="/js/coupon.js"></script>
+</body>
+</html>
